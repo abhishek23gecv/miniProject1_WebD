@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git & GitHub</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Center Title */
+h1 {
+    text-align: center;
+    color: #0073e6;
+    font-size: 2.5em;
+}
+
+/* Section Titles */
+h2 {
+    color: #0056b3;
+    border-bottom: 3px solid #0073e6;
+    padding-bottom: 5px;
+}
+
+h3 {
+    color: #ff6600;
+}
+
+h4 {
+    background-color: #333;
+    color: white;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Paragraph and Lists */
+p, ul {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+ul {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+/* Links */
+a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Code Blocks */
+h4 {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #282c34;
+    color: red;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Horizontal Rule */
+hr {
+    border: none;
+    height: 3px;
+    background: #0073e6;
+    margin: 30px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+  /* ===== Footer ===== */
+  footer {
+        text-align: center;
+        background-color: white;
+        color:  #333;
+        padding: 10px;
+    }
+
+    .follow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .follow a {
+        text-decoration: none;
+    }
+
+    .follow a i {
+        font-size: 40px;
+        color: #0b84ca;
+    }
+    .follow a i:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0);
+        }
+
+    </style>
+</head>
+
+<body>
+  <center><h1>Git & GitHub-Complete Guide</h1></center> 
+    <p>
+      <ul> <li>  Git aur GitHub version control system aur collaboration tool hai jo developers ko code manage karne aur track
+        karne me help karta hai.</li> <li>Chalo Git aur GitHub ko basic se advanced level tak commands ke saath samajhte
+        hain. </li>
+        </ul>
+    </p>
+    <hr>
+
+    <h2>Git Kya hai??</h2>
+    <p> <ul><li>Git ek distributed version control system hai jo code changes track karta hai aur multiple developers ko team me
+        milke kaam karne me help karta hai. </li>
+      <li>  Agar Git nahi hota, to har baar naye changes ko manually save aur share karna padta, jo kaafi problem create
+        karta hai. </li>
+
+       <li> Git ka use karne se code ka pura history track hota hai aur kabhi bhi previous version pe wapas ja sakte hain!
+        </li> </ul>
+    <h3>Example:</h3>Agar tumhari team me 5 log ek project pe kaam kar rahe hain, to sab apni apni changes ko Git me
+    track kar sakte hain bina kisi conflict ke.
+    </p>
+    <hr>
+    <h2>GitHub Kya Hai?</h2>
+    <p> Isme tum apne Git repositories ko store, share aur manage kar sakte ho.
+        <br> Git aur GitHub ek dusre se alag hain: <br>
+        Git → Local system pe version control ke liye.<br>
+        GitHub → Cloud me repositories ko store aur manage karne ke liye.
+    </p>
+    <hr>
+    <h2>Git Installation & Setup</h2>
+    <p>
+    <h3>Step 1: Install Github</h3>
+    Windows: <a href="https://git-scm.com/downloads">Download Git</a><br>
+    Mac: brew install git<br>
+    Linux: sudo apt install git
+
+    <h3>Step 2: Git Configure Karo</h3>
+    Git setup karne ke liye user name aur email set karna padta hai, jo commits ke saath save hota hai.
+    <h4>git config --global user.name "Tumhara user Name GitHub wala yaha likho"<br>
+        git config --global user.email "tumhara GitHub Wala email@example.com yaha likho"</h4>
+    Check Configuration:
+    <h4>git config --list</h4>
+    <hr>
+
+    <h2>Git Basic Commands</h2>
+    <p>
+    <h3> New Git Repository Initialize Karna</h3>
+    <h4>git init</h4>
+    ✅ Ye command ek naya Git repository create karti hai.
+    <h3> Git Repository Ko Status Check Karna </h3>
+    <h4> git status </h4>
+    ✅ Ye command batati hai ki kya changes stage ho chuke hain ya nahi.
+
+    <h3> Files Ko Staging Area Me Add Karna </h3>
+    <h4>git add filename # Single file add karne ke liye <br>
+        git add . # Saari files ek sath add karne ke liye (add or dot ke bich space rkhna jarur)</h4>
+    ✅ Staging area wo place hai jaha files commit hone se pehle ready hoti hain.
+
+    <h3> Changes Ko Commit Karna</h3>
+
+    <h4> git commit -m "Commit message yaha likho"</h4>
+
+    ✅ Ye command staged changes ko repository me save karti hai.
+
+    <hr>
+    <h2> Git Branching (Feature Development Ke Liye)</h2>
+    Branch ka use alag-alag features ya bug fixes ke liye kiya jata hai bina main code ko effect kiye.
+    <h3> Naya Branch Banana</h3>
+    <h4>git branch new-branch-name</h4>
+    ✅ Ye command naya branch create karti hai.
+    <h3> Branch Switch Karna</h3>
+    <h4>git checkout new-branch-name</h4>
+    ✅ Ye command tumhe dusre branch me shift karne me help karti hai.
+    <h4>git checkout -b new-branch-name</h4>
+    ✅ Ye command tumhe new branch create krke us branch me shift karne me help karti hai.
+    <h3> Git Merge (Branches Ko Merge Karna)</h3>
+    <h4> git checkout main <br>
+        git merge new-branch-name </h4>
+    ✅ Ye command kisi branch ke changes ko main branch me merge karti hai.
+    <h3> Branch Ko Delete Karna </h3>
+    <h4> git branch -d new-branch-name </h4>
+    ✅ Ye command branch delete karti hai agar wo merge ho chuka ho. <hr>
+
+    <h2>GitHub Ke Sath Kaam Karna</h2>
+    <h3> Git Repository Ko GitHub Se Connect Karna </h3>
+    <h4>git remote add origin https://github.com/username/repository.git</h4>
+    ✅ Ye command local Git repository ko GitHub repository se connect karti hai. 
+    <h3>Git repositories Ko dekhna</h3>
+    <h4>git remote -v</h4>
+    ✅ Ye command remote Git repositories ko dikhati hai.
+    <h3> Code Ko GitHub Pe Upload Karna (Push)</h3>
+    <h4>git push -u origin main </h4>
+
+    ✅ Ye command tumhare local commits ko GitHub pe upload karti hai. <br>
+
+    <h3> GitHub Se Code Download Karna (Clone) </h3>
+    <h4>git clone https://github.com/username/repository.git</h4>
+    ✅ Ye command GitHub ka repository copy karke local machine pe download karti hai.
+    <h3>Dusre Developers Ke Changes Ko Update Karna (Pull)</h3>
+    <h4> git pull origin main </h4>
+    ✅ Ye command GitHub se naye changes ko local repository me update karti hai.
+<hr>
+    <h2> Advanced Git Commands </h2>
+    <h3>Git Log (History Check Karna)</h3>
+    <h4>git log </h4>
+    ✅ Ye command poora commit history dikhati hai.
+    <h4>git log --oneline  #commit history ko oneline me dekhna <br>
+    git log --graph --decorate --all    # history ko graph ke roop me dikhana </h4>
+
+    <h3>Git Reset (Last Commit Ko Undo Karna) </h3>
+    <h4> git reset --hard HEAD~1 </h4>
+
+
+    ✅ Ye command last commit ko hata deta hai aur previous state pe le jata hai.
+    <h3>Git Stash (Temporary Changes Ko Store Karna)</h3>
+    <h4>git stash <br>
+        git stash pop</h4>
+    ✅ Agar tum changes ko temporarily save karna chahte ho, to git stash use karo aur baad me git stash pop se wapas
+    le
+    aao.
+    <h4>git stash list   #stashed changes ko dekhne ke Liye. <br>
+        git stash apply  # reapply stashed changes.
+        <br>
+        git stash drop  #stashed changes ko hatane ke Liye.
+    </h4>
+    <h3>Git Fetch (Remote Changes Ko Check Karna)</h3>  
+    <h4>git fetch</h4>
+    ✅ Ye command remote changes ko check karti hai.
+
+    <h3>Git Rebase (Branches Ko Clean
+    Karna)</h3>     
+    <h4>git rebase main</h4>
+    ✅ Ye command current branch ko clean karti hai aur main branch ke saath merge karti hai.
+    <h3>Git Cherry-Pick (Specific Commits Ko Copy Karna)</h3>
+    <h4>git cherry-pick commit-id</h4>
+    ✅ Ye command specific commit ko copy karke current branch me paste karti hai.
+
+    <h3>Git Tag (Specific Version Ko Mark Karna)</h3>
+    <h4>git tag -a v1.0 -m "Version 1.0"</h4>
+    ✅ Ye command specific version ko mark karti hai.
+    <h4>git tag</h4>
+    ✅ Ye command tags ko show karti hai.
+    <h4>git show v1.0</h4>
+    ✅ Ye command specific tag ko show karti hai.
+    <h3>Git Submodule (External Repositories Ko Add Karna)</h3>
+    <h4>git submodule add repository-url</h4>
+    ✅ Ye command external repositories ko add karti hai.
+    <h4>git submodule update --init --recursive</h4>
+    ✅ Ye command submodules ko update karti hai.
+    <h3>Git Bisect (Bug Find Karna)</h3>
+    <h4>git bisect start <br>
+        git bisect bad <br>
+        git bisect good commit-id</h4>
+    ✅ Ye command bug find karti hai.
+    <h3>Git Blame (Code Ka Author Check Karna)</h3>
+    <h4>git blame filename</h4>
+    ✅ Ye command code ka author check karti hai.
+    <h3>Git Archive (Repository Ko Zip Me Convert Karna)</h3>
+    <h4>git archive -o filename.zip main</h4>
+    ✅ Ye command repository ko zip me convert karti hai.
+    <h3>Git Worktree (Multiple Branches Ko Manage Karna)</h3>
+    <h4>git worktree add branch-name</h4>
+    ✅ Ye command multiple branches ko manage karti hai.
+    <h3>Git LFS (Large Files Ko Track Karna)</h3>
+    <h4>git lfs install <br>
+        git lfs track "*.psd" <br>
+        git add .gitattributes <br>
+        git commit -m "Add LFS"</h4>
+    ✅ Ye command large files ko track karti hai.
+
+
+    <h3>Git Revert (Commit Ko Undo Karna Without Deleting History)</h3>
+    <h4>git revert commit-id</h4>
+    ✅ Agar kisi commit ko undo karna ho bina delete kiye, to git revert use karo.
+    <h3>Git Reflog (Reference Logs Check Karna)</h3>
+    <h4>git reflog</h4>
+    ✅ Ye command reference logs ko check karti hai.
+    <h3>Git Hooks (Automate Tasks)</h3>
+    <h4>.git/hooks</h4>
+    ✅ Ye command automate tasks ko run karti hai.
+    <h3>Git Diff (Changes Check Karna)</h3>
+    <h4>git diff</h4>
+    ✅ Ye command changes ko check karti hai.
+    <h3>Git Ignore (Files Ko Ignore Karna)</h3>
+    <h4> echo "file_name extention ke sath" >> .gitignore</h4>
+    ✅ Ye command files ko ignore karti hai.
+    
+<h4>git clean -f # untracked file ko hata dega</h4>
+
+    <h3>Git Aliases (Commands Ko Shortcuts Me Convert Karna)</h3>
+    <h4>git config --global alias.co checkout <br>
+        git config --global alias.br branch <br>
+        git config --global alias.ci commit <br>
+        git config --global alias.st status</h4>    
+    ✅ Ye command commands ko shortcuts me convert karti hai.
+
+
+
+
+
+
+
+    <hr>
+
+    <h2>Git & GitHub Ka Real-Life Use Case</h2>
+    <ul>
+        <li>Tumhari team ek website ka project develop kar rahi hai.</li>
+        <li> Sab apne features alag-alag branches me add kar rahe hain.</li>
+        <li>Jab feature complete hota hai, to changes ko GitHub pe push karte hain.</li>
+        <li> Team leader changes ko review karke merge kar leta hai.</li>
+        <li> Agar koi problem aati hai, to previous version restore kar sakte hain.</li>
+
+    </ul>
+    <hr>
+    <h2>🎯 Conclusion</h2>
+    ✅ Git aur GitHub ka use karna har developer ke liye zaroori hai. <br>
+    ✅ Ye teamwork ko easy banata hai aur code track karna simple bana deta hai. <br>
+    ✅ Sabse common Git commands practice karo aur apni coding efficiency badhao! 🚀 <br>
+    <hr>
+    Ab tum Git aur GitHub bilkul pro level pe use kar sakte ho!  😎🔥
+<a href="https://docs.github.com/en">Official Documentation</a><br>
+    <b>Tips:</b> Sb kuchh suru se krna Git ko reinstall krke or jis command ka need ho wahi run krna.
+    <br> git config wala ,git basics wala , git remote origin add (phli baar ke liye) & git push jaruri baki tumhare upr sikhna.
+
+
+
+    </p>
+    
+</body>
+<footer>
+    <h5>Developer: Abhishek Kumar</h5>
+    <h6>You can reach me also on social media's.</h6>
+    <div class="follow">
+        <a href="https:/instagram.com/abhishek_7o1" target="_blank"><i class='bx bxl-instagram'></i></a> &nbsp;
+        &nbsp;
+        <a href="https://github.com/abhishek23gecv" target="_blank"><i class='bx bxl-github'></i></a> &nbsp; &nbsp;
+        <a href="https://www.linkedin.com/in/abhishek-kumar-050577268/" target="_blank"><i class='bx bxl-linkedin-square' ></i></a>
+    </div>
+    <p>© 2025 All Rights Reserved.</p>
+</footer>
+
+</html>
